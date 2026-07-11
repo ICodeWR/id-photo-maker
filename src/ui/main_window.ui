@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>智能证件照制作工具</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    /* ── 紧凑工具栏样式 ──────────────── */
+    QMainWindow, QWidget { font-size: 13px; }
+    QPushButton {
+        padding: 4px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #f8f8f8;
+        min-height: 20px;
+        max-height: 28px;
+    }
+    QPushButton:hover {
+        background: #e8e8e8;
+        border-color: #aaa;
+    }
+    QPushButton:pressed {
+        background: #d8d8d8;
+    }
+    QComboBox {
+        padding: 2px 6px;
+        min-height: 20px;
+        max-height: 26px;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        background: white;
+    }
+    QLabel { padding: 0 4px; }
+    QStatusBar { font-size: 12px; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="centralLayout">
+    <property name="leftMargin">6</property>
+    <property name="topMargin">6</property>
+    <property name="rightMargin">6</property>
+    <property name="bottomMargin">6</property>
+
+    <!-- ═══ 顶部工具栏 ═══ -->
+    <item>
+     <widget class="QWidget" name="toolbar" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>36</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="toolbarLayout">
+       <property name="leftMargin">2</property>
+       <property name="topMargin">2</property>
+       <property name="rightMargin">2</property>
+       <property name="bottomMargin">2</property>
+       <property name="spacing">4</property>
+       <item>
+        <widget class="QPushButton" name="btn_upload">
+         <property name="text">
+          <string>📁 上传图片</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_camera">
+         <property name="text">
+          <string>📷 打开摄像头</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_capture">
+         <property name="text">
+          <string>📸 拍照</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="toolbarSpacerLeft">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbl_bg_color">
+         <property name="text">
+          <string>背景色：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="combo_bg">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="currentText">
+          <string>红色</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>红色</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>蓝色</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>白色</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>灰色</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>绿色</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbl_size">
+         <property name="text">
+          <string>尺寸：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="combo_size">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="currentText">
+          <string>一寸</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>一寸</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>二寸</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>小一寸</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>大一寸</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>小二寸</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>大二寸</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>三寸</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>五寸</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>护照</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>签证</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>驾驶证</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="toolbarSpacerRight">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_save">
+         <property name="text">
+          <string>💾 保存图片</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- ═══ 主工作区（左右分栏） ═══ -->
+    <item>
+     <widget class="QSplitter" name="workSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+
+      <!-- 左侧：原图区 -->
+      <widget class="QScrollArea" name="leftScrollArea">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>400</width>
+         <height>0</height>
+        </size>
+       </property>
+       <widget class="QWidget" name="leftScrollContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>400</width>
+          <height>600</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="leftScrollLayout">
+         <property name="leftMargin">0</property>
+         <property name="topMargin">0</property>
+         <property name="rightMargin">0</property>
+         <property name="bottomMargin">0</property>
+         <item>
+          <widget class="QLabel" name="label_original">
+           <property name="text">
+            <string>点击「上传图片」开始</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #e8e8e8; color: #999;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+
+      <!-- 右侧：预览区 -->
+      <widget class="QScrollArea" name="rightScrollArea">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>320</width>
+         <height>0</height>
+        </size>
+       </property>
+       <widget class="QWidget" name="rightScrollContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>320</width>
+          <height>600</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="rightScrollLayout">
+         <property name="leftMargin">0</property>
+         <property name="topMargin">0</property>
+         <property name="rightMargin">0</property>
+         <property name="bottomMargin">0</property>
+         <item>
+          <widget class="QLabel" name="label_preview">
+           <property name="text">
+            <string>预览区</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #eeeeee; color: #bbb;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+
+  <!-- ═══ 状态栏 ═══ -->
+  <widget class="QStatusBar" name="statusbar">
+   <property name="statusTip">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
