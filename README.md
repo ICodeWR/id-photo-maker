@@ -146,7 +146,7 @@ main_window.ui (XML)  ── pyside6-uic ──→  ui_main_window.py (Ui_MainWi
 
 **码上工坊** · 用 Python 解决真实问题 | 分享实战项目、效率工具和 AI 应用，让代码为你工作
 
-![公众号二维码](assets/logo/qrcode_msgf.jpg)
+![公众号二维码](assets/logo/qrcode.jpg)
 
 *扫码关注公众号，获取更多技术分享*
 
